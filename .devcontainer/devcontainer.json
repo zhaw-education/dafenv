@@ -1,0 +1,40 @@
+{
+  // The name of the development container for the module ZHAW Data Analysis Fundamentals
+  "name": "ZHAW DAF Python Dev Container",
+
+  "image": "duneau/zhaw_daf:latest",
+
+  // A list of VSCode extensions to install in the container
+  "customizations": {
+    "vscode": {
+
+      "extensions": [
+        "ms-python.python",          // Python extension for VSCode
+        "ms-python.vscode-pylance",  // Pylance extension for better Python language support
+        "ms-vscode-remote.remote-containers", 
+        "ms-toolsai.jupyter",       // Jupyter extension for running Jupyter notebooks in VSCode
+        "ms-azuretools.vscode-docker", // Docker extension for VSCode
+        "vscode.git"               // Git extension for VSCode
+      ],
+
+      // VSCode settings specific to the development container
+      "settings": {
+        "python.pythonPath": "/usr/local/bin/python", // Path to the Python interpreter
+        "python.linting.enabled": true,               // Enable linting (Linting is the process of analyzing code to identify potential errors, bugs, stylistic errors, and other issues. It helps improve code quality and maintainability by enforcing coding standards and best practices. Here are some key points about linting)
+        "python.linting.pylintEnabled": true,         // Enable pylint for linting
+        "workbench.colorTheme": "Default Light+",    // Set the overall VSCode theme to light
+        "jupyter.themeMatplotlibPlots": true,         // Ensure matplotlib plots use the theme's background
+        "extensions.ignoreRecommendations": true
+      }
+    }
+  },
+  // A command to run after the container is created, in this case, installing the dependencies from requirements.txt
+  // "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+
+   // A command to run after the container starts, displaying a welcome message
+  "postStartCommand": "echo '\nWelcome to DAF, you are all set!\n'"
+
+
+
+}
+
